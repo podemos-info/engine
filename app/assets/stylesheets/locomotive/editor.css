@@ -2002,7 +2002,10 @@
     .url-picker-type-option--checked label {
       color: #000 !important; }
     .url-picker-type-option input {
-      margin-right: 1rem; }
+      margin-right: 0.2rem;
+      vertical-align: text-bottom; }
+      .url-picker-type-option input.hidden {
+        display: none; }
     .url-picker-type-option label {
       font-weight: normal;
       color: #91979f;
