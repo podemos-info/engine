@@ -25,6 +25,7 @@ en:
           remove_button: "Remove"
           types:
             page: Page
+            content_asset: Asset
             content_entry: Model
             _external: URL
             email: Email
@@ -65,6 +66,7 @@ en:
             open_new_window: "Open in a new window?"
             types:
               page: Page
+              content_asset: Asset
               content_entry: Model
               _external: URL
               email: Email
@@ -72,6 +74,10 @@ en:
               label: Page
               placeholder: Type the title of your page
               section_label: Section
+            content_asset:
+              label: Asset
+              placeholder: Type the filename of the asset
+              upload: Upload a local file
             content_entry:
               content_type_label: Which model?
               label: Instance of your model
