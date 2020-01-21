@@ -33,6 +33,7 @@ class Main extends Component {
     this.state = {
       type:           '_external',
       page:           { value: null, new_window: false },
+      content_asset:  { value: null, new_window: false },
       content_entry:  { value: null, page_id: null, new_window: false },
       _external:      { value: '', new_window: false },
       email:          { value: '', new_window: false }
@@ -70,7 +71,7 @@ class Main extends Component {
   }
 
   getOptionList() {
-    var list = ['page', 'content_entry', '_external', 'email'];
+    var list = ['page', 'content_asset', 'content_entry', '_external', 'email'];
 
     // remove the content_entry option if no templatized pages
     if (this.props.contentTypes.length === 0) list.splice(1, 1);
