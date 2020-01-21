@@ -10,6 +10,8 @@ module Locomotive
       case type
       when 'page'
         find_pages(query, max_results)
+      when 'content_asset'
+        find_content_assets(query, max_results)
       when 'content_entry'
         find_content_entries(scope, query, max_results)
       else
@@ -46,6 +48,20 @@ module Locomotive
           value:    page._id,
           label:    ['Page', page.title],
           sections: page.all_sections_content
+        }
+      end
+    end
+
+    def find_content_assets(query, max_results = 10)
+      site.content_assets
+      .only(:_id, :source_filename, :site_id)
+      .by_filename(query)
+      .limit(max_results)
+      .sort(source_filename: 1).map do |content_asset|
+        {
+          type:     'content_asset',
+          value:    { url: content_asset.source.url, id: content_asset._id },
+          label:    ['Content asset', content_asset.source_filename],
         }
       end
     end
